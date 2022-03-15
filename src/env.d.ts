@@ -7,3 +7,7 @@ declare module '*.vue' {
   const component: DefineComponent<{}, {}, any>
   export default component
 }
+
+declare module 'vuetify'
+declare module 'vuetify/lib/components'
+declare module 'vuetify/lib/directives'
