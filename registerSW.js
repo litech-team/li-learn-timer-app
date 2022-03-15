@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/li-learn-timer-app/sw.js', { scope: '/li-learn-timer-app/' })})}
