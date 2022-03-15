@@ -1,4 +1,4 @@
 <template>
   <h1>Welcome! This is about.vue Page!</h1>
-  <a href="/">Back to index.vue Page!</a>
+  <router-link to="/">rBack to index.vue Page!</router-link>
 </template>
