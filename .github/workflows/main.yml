@@ -1,0 +1,53 @@
+name: CD
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+
+      - name: Install NPM packages (use Yarn)
+        run: yarn install --frozen-lockfile
+
+      - name: Build(standard)
+        run: yarn run build
+        env:
+          DEPLOY_TO: standard
+          NODE_ENV: production
+
+      - name: Deploy(standard)
+        uses: s0/git-publish-subdir-action@develop
+        env:
+          REPO: self
+          BRANCH: dist/standard
+          FOLDER: dist
+          MESSAGE: "{sha}"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Remove dist directory
+        run: rm -rf dist
+
+      - name: Build(gh-pages)
+        run: yarn run build
+        env:
+          DEPLOY_TO: gh-pages
+          NODE_ENV: production
+
+      - name: Deploy(gh-pages)
+        uses: s0/git-publish-subdir-action@develop
+        env:
+          REPO: self
+          BRANCH: dist/gh-pages
+          FOLDER: dist
+          MESSAGE: "{sha}"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
