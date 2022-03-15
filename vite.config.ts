@@ -2,6 +2,9 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vuetify from '@vuetify/vite-plugin'
 import Pages from "vite-plugin-pages"
+import { VitePWA } from 'vite-plugin-pwa'
+
+import manifest from "./manifest.json"
 
 const path = require('path')
 
@@ -17,6 +20,7 @@ export default defineConfig({
       autoImport: true,
     }),
     Pages(),
+    VitePWA({ manifest }),
   ],
   define: { 'process.env': {} },
   resolve: {
