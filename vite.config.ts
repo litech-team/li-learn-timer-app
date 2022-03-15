@@ -16,15 +16,7 @@ export default defineConfig({
     vuetify({
       autoImport: true,
     }),
-    Pages({
-      dirs: [
-        {
-          dir: 'src/pages', baseRoute: (
-            process.env.DEPLOY_TO === "gh-pages" ? "li-learn-timer-app" : ""
-          )
-        },
-      ],
-    }),
+    Pages(),
   ],
   define: { 'process.env': {} },
   resolve: {
