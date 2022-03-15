@@ -1,1 +1,0 @@
-import{_ as o}from"./index.740ddd39.js";import{i as a,o as t,F as r,j as e}from"./vendor.ae6c1904.js";const s={},c=e("h1",null,"Welcome! This is about.vue Page!",-1),n=e("a",{href:"/"},"Back to index.vue Page!",-1);function _(i,l){return t(),a(r,null,[c,n],64)}var m=o(s,[["render",_]]);export{m as default};
