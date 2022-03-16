@@ -1,1 +1,0 @@
-import{_ as o}from"./index.bf676be9.js";import{e as t,a,w as r,F as s,f as n,r as c,o as _,g as l}from"./vendor.c4c3de42.js";const i={},u=n("h1",null,"Welcome! This is about.vue Page!",-1),d=l("rBack to index.vue Page!");function m(f,p){const e=c("router-link");return _(),t(s,null,[u,a(e,{to:"/"},{default:r(()=>[d]),_:1})],64)}var k=o(i,[["render",m]]);export{k as default};
